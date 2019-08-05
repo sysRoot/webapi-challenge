@@ -38,15 +38,15 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [x] How can we partition our application into sub-applications?
     > We can divvy up differnent routes into sublet pieces that handle the functions of that specific route/resource in the api, unless I was to infer that you maybe meant protected routes that can be set up like middle ware to segregate parts and routes via protection/authentication 
-    
+
 ## Project Setup
 
 Follow these steps to set up and work on your project:
 
-- [ ] Create a forked copy of this project.
-- [ ] Add your _Project Manager_ as collaborator on Github.
-- [ ] Clone your forked version of the Repository.
-- [ ] Create a new Branch on the clone: git checkout -b `<firstName-lastName>`.
+- [x] Create a forked copy of this project.
+- [x] Add your _Project Manager_ as collaborator on Github.
+- [x] Clone your forked version of the Repository.
+- [x] Create a new Branch on the clone: git checkout -b `<firstName-lastName>`.
 - [ ] Implement the project on this Branch, committing changes regularly.
 - [ ] Push commits: git push origin `<firstName-lastName>`.
 
