@@ -9,6 +9,9 @@ server.use(helmet());
 server.use(morgan('short'));
 server.use(cors());
 
+const projectsRouter = require('./routers/projectsRouter');
+
+server.use('/projects', projectsRouter);
 
 // server.get('', (req, res) => {
 //   res.json({ message: "the server is alive!"})
