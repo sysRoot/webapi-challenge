@@ -9,17 +9,6 @@ router.get('/', (req, res) => {
     .catch(err => res.status(500).json({ error: "The project information could not be retrieved."}))
 })
 
-// router.get('/:id/actions', async (req, res) => {
-//   try {
-//     const actions = await projectModel.getProjectActions(req.params.id);
-//     actions
-//     ? res.status(200).json(actions)
-//     : res.status(404).json({ message: "Actions for that project number could not be found"})
-//   } catch (err) {
-//     res.status(500).json({ error: "The actions information could not be retrieved."})
-//   }
-// })
-
 router.get('/:id', async (req, res) => {
   try {
     const project = await projectModel.get(req.params.id);
@@ -44,5 +33,15 @@ router.get('/:id', async (req, res) => {
     }
   })
 
-  
+  router.post('/', async (req, res) => {
+    if (req.body.name && req.body.name.length < 129 && req.body.description){
+      try {
+        const newProject = await projectModel.insert(req.body);
+        const project = await projectModel.get(newProject.id);
+        res.status(201).json(project);
+      } catch (err) {
+        res.status(500).json({ error: "Could not add project."})
+      }
+    }
+  })
 module.exports = router;
