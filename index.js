@@ -12,3 +12,11 @@ I need this code, just don't know where, perhaps should make some middleware, do
 
 Go code!
 */
+
+// implement your API here
+
+const server = require('./server');
+const express = require('express'); 
+
+const port = process.env.PORT || 9000;
+server.listen(port, () => console.log('RX/TX on port:', port));
